@@ -1,0 +1,12 @@
+<template>
+  <div class="row">
+    <form submit.delegate="onFormSubmit()">
+      <div class="col-md-10 col-xs-10">
+        <input type="text" class="form-control" placeholder="Search..." value.bind="term">
+      </div>
+      <div class="col-md-2 col-xs-2">
+        <button class="btn btn-primary btn-block" type="submit">Go</button>
+      </div>
+    </form>
+  </div>
+</template>

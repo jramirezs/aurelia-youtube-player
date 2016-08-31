@@ -1,0 +1,24 @@
+<template>
+  <require from="../components/search-bar"></require>
+  <require from="../components/videos-panel.html"></require>
+  <require from="../components/videos-grid.html"></require>
+  <require from="../themes/default.css"></require>
+
+  <div class="container">
+    <search-bar term.bind="state.searchTerm">
+    </search-bar>
+    
+    <br>
+    <h3 show.bind="isSearching">Loading</h3>
+
+    <div if.bind="!state.videos && !isSearching" >
+      <h4>Popular Videos</h4>
+      <videos-grid videos.bind="state.popularVideos"></videos-grid>
+    </div>
+
+    <videos-panel show.bind="state.videos && !isSearching" 
+      term.one-way="state.searchTerm" 
+      videos.bind="state.videos">
+    </videos-panel>
+  </div>    
+</template>

@@ -1,0 +1,21 @@
+<template bindable="term, videos">
+  <div>
+    <h4>Results for <span show.bind="term">- ${term}</span></h4>
+
+    <div class="panel" repeat.for="video of videos">
+      <a href.bind="'#/video/' + video.id.videoId">
+        <div with.bind="video.snippet" class="panel-body">
+          <div class="col-md-4 col-sm-4 col-xs-4">
+            <img class="img-responsive" src.bind="thumbnails.high.url" alt="">
+          </div>
+          <div class="col-md-8 col-sm-8 col-xs-8">
+            <strong>${title}</strong>
+            <p>
+              <a target="_blank" href.bind="'https://www.youtube.com/channel/' + channelId">${channelTitle}</a>
+            </p>          
+            <p class="text-muted">${description}</p>
+          </div>
+        </div>
+      </a>
+  </div>
+</template>

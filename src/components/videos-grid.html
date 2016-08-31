@@ -1,0 +1,31 @@
+<template bindable="videos">
+  <require from="../resources/value-converters/NumberValueConverter"></require>
+
+  <style>
+    .text-ellipsis {
+      text-overflow: ellipsis; 
+      display: block; 
+      overflow: hidden; 
+      position: relative; 
+      white-space: normal; 
+      word-wrap: break-word;
+    }
+  </style>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-4 col-xs-6" repeat.for="video of videos">
+      <a href.bind="'#/video/' + video.id">
+      <div class="thumbnail" with.bind="video.snippet"> 
+        <img src.bind="thumbnails.high.url" class="img-responsive"> 
+        <div class="caption"> 
+          <strong style="height: 3em;" class="text-ellipsis">${title}</strong>
+          <p class="text-ellipsis" style="height: 1.5em;">
+              <a target="_blank" href.bind="'https://www.youtube.com/channel/' + channelId">${channelTitle}</a>
+          </p>
+          <span class="text-muted">${video.statistics.viewCount | number} views</span>
+        </div> 
+      </div>
+      </a>
+    </div>
+  </div>
+</template>

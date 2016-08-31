@@ -1,0 +1,20 @@
+<template>
+  <div>
+    <h4>Recommended Videos</h4>
+    <div class="row" repeat.for="video of videos" style="margin-bottom: 15px;">
+      <a href.bind="'#/video/' + video.id.videoId">
+        <div with.bind="video.snippet">
+          <div class="col-md-4 col-sm-4 col-xs-4">
+            <img class="img-responsive" src.bind="thumbnails.high.url" alt="">
+          </div>
+          <div class="col-md-8 col-sm-8 col-xs-8 text-ellipsis">
+            <strong class="">${title}</strong>
+            <p>
+              <a target="_blank" href.bind="'https://www.youtube.com/channel/' + channelId">${channelTitle}</a>
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</template>
