@@ -11,8 +11,8 @@
     <br>
     <h3 show.bind="isSearching">Loading</h3>
 
-    <div if.bind="!state.videos && !isSearching" >
-      <h4>Popular Videos</h4>
+    <div class="section" if.bind="!state.videos && !isSearching" >
+      <h4 class="section-title">Popular Videos</h4>
       <videos-grid videos.bind="state.popularVideos"></videos-grid>
     </div>
 

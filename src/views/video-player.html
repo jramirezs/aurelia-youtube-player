@@ -3,22 +3,27 @@
   <require from="../resources/value-converters/NumberValueConverter"></require>
 
   <div class="container">
-    <div class="col-md-8">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe className="embed-responsive-item" src.bind="'https://www.youtube.com/embed/' + id"></iframe>
+    <div class="">
+      <div class="col-md-8">
+        <div>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe className="embed-responsive-item" src.bind="'https://www.youtube.com/embed/' + id"></iframe>
+          </div>
+        </div>
+        <br />
+        <div with.bind="state.selectedVideo.snippet" class="video-detail section">
+          <h3>${title}</h3>
+          <a target="_blank" href.bind="'https://www.youtube.com/channel/' + channelId"><h4>${channelTitle}</h4></a>
+          <span class="text-muted">${state.selectedVideo.statistics.viewCount | number} views</span>
+          <br>
+          <br>
+          <p class="text-muted" style="white-space: pre-line;">${description}</p>
+          <br>
+        </div>
       </div>
-      <div with.bind="state.selectedVideo.snippet" class="video-detail">
-        <h3>${title}</h3>
-        <a target="_blank" href.bind="'https://www.youtube.com/channel/' + channelId"><h4>${channelTitle}</h4></a>
-        <span class="text-muted">${state.selectedVideo.statistics.viewCount | number} views</span>
-        <br>
-        <br>
-        <p class="text-muted" style="white-space: pre-line;">${description}</p>
-        <br>
+      <div class="col-md-4">
+        <suggested-videos-list videos.bind="state.suggestedVideos"></suggested-videos-list>
       </div>
-    </div>
-    <div class="col-md-4">
-      <suggested-videos-list videos.bind="state.suggestedVideos"></suggested-videos-list>
     </div>
   </div>
 </template>

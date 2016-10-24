@@ -1,1 +1,70 @@
-// Start theming
+* {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+body {
+  background-color: #F1F1F1;
+  color: #333;
+}
+
+a {
+  color: #333;
+}
+
+.p-none {
+  padding: 0 !important;
+}
+
+.section {
+  background-color: white;
+  padding: 0.5em 1em;
+  border: 1px solid #e2e2e2;
+  margin-bottom: 2em;
+
+  .section-title {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+.navbar-default {
+  background-color: #cc181e;
+  color: white !important;
+  border-radius: 0;
+
+  .navbar-brand {
+    padding: 0;
+    color: white;
+    font-size: 14px;
+
+    &:hover, &:active, &:visited {
+      color: white;
+    }
+
+    > img {
+      height: 100%;
+      padding: 5px;
+      width: auto;
+      margin-left: 10px;
+      display: inline-block;
+    }
+  }
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.thumbnail {
+  border: none;
+}
+
+// @media (min-width: 1200px) {
+//   .container {
+//       width: 1170px;
+//   }
+// }

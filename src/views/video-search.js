@@ -13,7 +13,7 @@ export class VideoSearch {
     this.ea = ea;
 
     this.subscriber = this.ea.subscribe('searchTermChanged', data => {
-      this.state.searchTerm = data.term;
+      this.state.searchTerm = data.term || '';
       this.search();
     });
   }
